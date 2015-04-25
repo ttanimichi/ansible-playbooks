@@ -1,0 +1,13 @@
+---
+
+- name: apt-get update
+  apt:  update_cache=yes
+
+- name: update all packages
+  apt:  upgrade=dist
+
+- name: install required packages
+  apt:  name={{ item }} state=latest
+  with_items:
+    - bash
+    - curl

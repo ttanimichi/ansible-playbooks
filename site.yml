@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  gather_facts: True
+  remote_user: ubuntu
+  sudo: yes
+  vars:
+    user: ttanimichi
+  roles:
+    - base
+#   - nginx
