@@ -2,9 +2,6 @@
 
 - hosts: all
   remote_user: vagrant
-  sudo: yes
-  vars:
-    user: ttanimichi
   roles:
     - base
 #   - nginx
