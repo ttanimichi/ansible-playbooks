@@ -2,9 +2,13 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
+  config.vm.provider :virtualbox do |vb|
+    vb.gui = true
+  end
+
   config.vm.define "ubuntu" do |ubuntu|
     ubuntu.vm.box     = "ubuntu1404"
-    ubuntu.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+    ubuntu.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box"
 
     ubuntu.ssh.forward_agent = true
     ubuntu.vm.network "private_network", ip: "192.168.33.10"
